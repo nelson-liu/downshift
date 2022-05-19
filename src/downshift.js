@@ -1028,8 +1028,9 @@ class Downshift extends Component {
       ...state,
     })
     this.previousResultCount = resultCount
-
-    setA11yStatus(status, this.props.environment.document)
+    // NOTE(nfliu): removing this because calling this function doesn't work with
+    // shadowRoot, since shadowRoot has no createElement or body.appendChild functions.
+    // setA11yStatus(status, this.props.environment.document)
   }, 200)
 
   componentDidMount() {
